@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE FWObjectDatabase SYSTEM "fwbuilder.dtd">
+<FWObjectDatabase xmlns="http://www.fwbuilder.org/1.0/" version="2.0.7" lastModified="1322757816" id="root">
+  <Library color="#d2ffd0" id="id47C69FD6" name="User">
+    <ObjectGroup id="id47C69FD7" name="Objects">
+      <ObjectGroup id="id47C69FD8" name="Addresses">
+        <IPv4 address="255.255.255.255" comment="" id="id47C6A23D" name="Broadcast" netmask="255.255.255.255"/>
+        <IPv4 address="0.0.0.0" comment="" id="id47C6A247" name="No IP" netmask="255.255.255.255"/>
+        <IPv4 address="192.168.1.99" comment="" id="id47C6A4D6" name="Client" netmask="255.255.255.255"/>
+      </ObjectGroup>
+      <ObjectGroup id="id47C69FD9" name="Groups">
+        <ObjectGroup comment="" id="id47C6A248" name="All internal Network">
+          <ObjectRef ref="id47C6A23E"/>
+          <ObjectRef ref="id47C6A23F"/>
+        </ObjectGroup>
+      </ObjectGroup>
+      <ObjectGroup id="id47C69FDA" name="Hosts">
+        <Host comment="" id="id47C6A240" name="DMZ Server">
+          <Interface dyn="False" id="id47C6A242" label="DMZ" name="eth0" security_level="0" unnum="False">
+            <IPv4 address="192.168.2.2" id="id47C6A244" name="DMZ Server:eth0:ip" netmask="255.255.255.255"/>
+            <InterfacePolicy id="id47C6A243"/>
+          </Interface>
+          <Management address="0.0.0.0">
+            <SNMPManagement enabled="False" snmp_read_community="" snmp_write_community=""/>
+            <FWBDManagement enabled="False" identity="" port="-1"/>
+            <PolicyInstallScript arguments="" command="" enabled="False"/>
+          </Management>
+          <HostOptions>
+            <Option name="use_mac_addr_filter">False</Option>
+          </HostOptions>
+        </Host>
+      </ObjectGroup>
+      <ObjectGroup id="id47C69FDB" name="Networks">
+        <Network comment="" id="id47C6A23E" name="LAN" address="192.168.1.0" netmask="255.255.255.0"/>
+        <Network comment="" id="id47C6A23F" name="DMZ" address="192.168.2.0" netmask="255.255.255.0"/>
+      </ObjectGroup>
+      <ObjectGroup id="id47C69FDC" name="Address Ranges"/>
+    </ObjectGroup>
+    <ServiceGroup id="id47C69FDD" name="Services">
+      <ServiceGroup id="id47C69FDE" name="Groups"/>
+      <ServiceGroup id="id47C69FDF" name="ICMP">
+        <ICMPService code="-1" comment="" id="id47C6A293" name="PING" type="-1"/>
+      </ServiceGroup>
+      <ServiceGroup id="id47C69FE0" name="IP"/>
+      <ServiceGroup id="id47C69FE1" name="TCP">
+        <TCPService ack_flag="False" ack_flag_mask="False" comment="" dst_range_end="80" dst_range_start="80" fin_flag="False" fin_flag_mask="False" id="id47C6A24B" name="TCP 80" psh_flag="False" psh_flag_mask="False" rst_flag="False" rst_flag_mask="False" src_range_end="0" src_range_start="0" syn_flag="False" syn_flag_mask="False" urg_flag="False" urg_flag_mask="False"/>
+        <TCPService ack_flag="False" ack_flag_mask="False" comment="" dst_range_end="8080" dst_range_start="8080" fin_flag="False" fin_flag_mask="False" id="id47C6A24C" name="TCP 8080" psh_flag="False" psh_flag_mask="False" rst_flag="False" rst_flag_mask="False" src_range_end="0" src_range_start="0" syn_flag="False" syn_flag_mask="False" urg_flag="False" urg_flag_mask="False"/>
+        <TCPService ack_flag="False" ack_flag_mask="False" comment="" dst_range_end="139" dst_range_start="139" fin_flag="False" fin_flag_mask="False" id="id47C6A24D" name="TCP 139" psh_flag="False" psh_flag_mask="False" rst_flag="False" rst_flag_mask="False" src_range_end="0" src_range_start="0" syn_flag="False" syn_flag_mask="False" urg_flag="False" urg_flag_mask="False"/>
+        <TCPService ack_flag="False" ack_flag_mask="False" comment="" dst_range_end="445" dst_range_start="445" fin_flag="False" fin_flag_mask="False" id="id47C6A24E" name="TCP 445" psh_flag="False" psh_flag_mask="False" rst_flag="False" rst_flag_mask="False" src_range_end="0" src_range_start="0" syn_flag="False" syn_flag_mask="False" urg_flag="False" urg_flag_mask="False"/>
+        <TCPService ack_flag="False" ack_flag_mask="False" comment="" dst_range_end="23" dst_range_start="23" fin_flag="False" fin_flag_mask="False" id="id47C6A24F" name="Telnet" psh_flag="False" psh_flag_mask="False" rst_flag="False" rst_flag_mask="False" src_range_end="0" src_range_start="0" syn_flag="False" syn_flag_mask="False" urg_flag="False" urg_flag_mask="False"/>
+        <TCPService ack_flag="False" ack_flag_mask="False" comment="" dst_range_end="53" dst_range_start="53" fin_flag="False" fin_flag_mask="False" id="id47C6A3EF" name="DNS TCP" psh_flag="False" psh_flag_mask="False" rst_flag="False" rst_flag_mask="False" src_range_end="0" src_range_start="0" syn_flag="False" syn_flag_mask="False" urg_flag="False" urg_flag_mask="False"/>
+        <TCPService ack_flag="False" ack_flag_mask="False" comment="" dst_range_end="443" dst_range_start="443" fin_flag="False" fin_flag_mask="False" id="id47C6A692" name="HTTPS" psh_flag="False" psh_flag_mask="False" rst_flag="False" rst_flag_mask="False" src_range_end="0" src_range_start="0" syn_flag="False" syn_flag_mask="False" urg_flag="False" urg_flag_mask="False"/>
+      </ServiceGroup>
+      <ServiceGroup id="id47C69FE2" name="UDP">
+        <UDPService comment="" dst_range_end="67" dst_range_start="67" id="id47C6A27B" name="DHCP req" src_range_end="0" src_range_start="0"/>
+        <UDPService comment="" dst_range_end="68" dst_range_start="68" id="id47C6A27C" name="DHCP reply" src_range_end="0" src_range_start="0"/>
+        <UDPService comment="" dst_range_end="53" dst_range_start="53" id="id47C6A3F1" name="DNS UDP" src_range_end="0" src_range_start="0"/>
+      </ServiceGroup>
+      <ServiceGroup id="id47C69FE3" name="Custom"/>
+    </ServiceGroup>
+    <ObjectGroup id="id47C69FE4" name="Firewalls">
+      <Firewall comment="" host_OS="linux24" id="id47C6A22E" name="laboFW" platform="iptables" version="1.2.9">
+        <NAT id="id47C6A232">
+          <NATRule disabled="False" id="id4ECBA1F2" position="0">
+            <OSrc neg="False">
+              <ObjectRef ref="id47C6A23E"/>
+            </OSrc>
+            <ODst neg="False">
+              <ObjectRef ref="sysid0"/>
+            </ODst>
+            <OSrv neg="False">
+              <ServiceRef ref="sysid1"/>
+            </OSrv>
+            <TSrc neg="False">
+              <ObjectRef ref="id47C6A233"/>
+            </TSrc>
+            <TDst neg="False">
+              <ObjectRef ref="sysid0"/>
+            </TDst>
+            <TSrv neg="False">
+              <ServiceRef ref="sysid1"/>
+            </TSrv>
+            <NATRuleOptions/>
+          </NATRule>
+          <NATRule disabled="False" id="id4ECBAB64" position="1">
+            <OSrc neg="False">
+              <ObjectRef ref="sysid0"/>
+            </OSrc>
+            <ODst neg="False">
+              <ObjectRef ref="id47C6A233"/>
+            </ODst>
+            <OSrv neg="False">
+              <ServiceRef ref="id47C6A24B"/>
+            </OSrv>
+            <TSrc neg="False">
+              <ObjectRef ref="sysid0"/>
+            </TSrc>
+            <TDst neg="False">
+              <ObjectRef ref="id47C6A240"/>
+            </TDst>
+            <TSrv neg="False">
+              <ServiceRef ref="id47C6A24B"/>
+            </TSrv>
+            <NATRuleOptions/>
+          </NATRule>
+        </NAT>
+        <Policy id="id47C6A231">
+          <PolicyRule action="Accept" disabled="False" id="id4ECBA127" log="True" position="0">
+            <Src neg="False">
+              <ObjectRef ref="id47C6A247"/>
+            </Src>
+            <Dst neg="False">
+              <ObjectRef ref="id47C6A23D"/>
+            </Dst>
+            <Srv neg="False">
+              <ServiceRef ref="id47C6A27B"/>
+            </Srv>
+            <When neg="False">
+              <IntervalRef ref="sysid2"/>
+            </When>
+            <PolicyRuleOptions/>
+          </PolicyRule>
+          <PolicyRule action="Accept" disabled="False" id="id4ECBA188" log="True" position="1">
+            <Src neg="False">
+              <ObjectRef ref="sysid0"/>
+            </Src>
+            <Dst neg="False">
+              <ObjectRef ref="id47C6A23D"/>
+            </Dst>
+            <Srv neg="False">
+              <ServiceRef ref="id47C6A27C"/>
+            </Srv>
+            <When neg="False">
+              <IntervalRef ref="sysid2"/>
+            </When>
+            <PolicyRuleOptions/>
+          </PolicyRule>
+          <PolicyRule action="Accept" disabled="False" id="id4ECBA2E9" log="True" position="2">
+            <Src neg="False">
+              <ObjectRef ref="id47C6A23F"/>
+            </Src>
+            <Dst neg="False">
+              <ObjectRef ref="id47C6A23E"/>
+            </Dst>
+            <Srv neg="False">
+              <ServiceRef ref="id47C6A293"/>
+            </Srv>
+            <When neg="False">
+              <IntervalRef ref="sysid2"/>
+            </When>
+            <PolicyRuleOptions/>
+          </PolicyRule>
+          <PolicyRule action="Accept" disabled="False" id="id4ECBA2DC" log="True" position="3">
+            <Src neg="False">
+              <ObjectRef ref="id47C6A23E"/>
+            </Src>
+            <Dst neg="False">
+              <ObjectRef ref="id47C6A23F"/>
+            </Dst>
+            <Srv neg="False">
+              <ServiceRef ref="id47C6A293"/>
+            </Srv>
+            <When neg="False">
+              <IntervalRef ref="sysid2"/>
+            </When>
+            <PolicyRuleOptions/>
+          </PolicyRule>
+          <PolicyRule action="Accept" disabled="False" id="id4ECBA2F6" log="True" position="4">
+            <Src neg="False">
+              <ObjectRef ref="id47C6A23E"/>
+            </Src>
+            <Dst neg="True">
+              <ObjectRef ref="id47C6A248"/>
+            </Dst>
+            <Srv neg="False">
+              <ServiceRef ref="id47C6A293"/>
+            </Srv>
+            <When neg="False">
+              <IntervalRef ref="sysid2"/>
+            </When>
+            <PolicyRuleOptions/>
+          </PolicyRule>
+          <PolicyRule action="Accept" disabled="False" id="id4ECBA4B1" log="True" position="5">
+            <Src neg="False">
+              <ObjectRef ref="id47C6A23E"/>
+            </Src>
+            <Dst neg="True">
+              <ObjectRef ref="id47C6A248"/>
+            </Dst>
+            <Srv neg="False">
+              <ServiceRef ref="id47C6A3EF"/>
+            </Srv>
+            <When neg="False">
+              <IntervalRef ref="sysid2"/>
+            </When>
+            <PolicyRuleOptions/>
+          </PolicyRule>
+          <PolicyRule action="Accept" disabled="False" id="id4ECBA73A" log="True" position="6">
+            <Src neg="False">
+              <ObjectRef ref="id47C6A23E"/>
+            </Src>
+            <Dst neg="True">
+              <ObjectRef ref="id47C6A248"/>
+            </Dst>
+            <Srv neg="False">
+              <ServiceRef ref="id47C6A3F1"/>
+            </Srv>
+            <When neg="False">
+              <IntervalRef ref="sysid2"/>
+            </When>
+            <PolicyRuleOptions/>
+          </PolicyRule>
+          <PolicyRule action="Accept" disabled="False" id="id4ECBA9C5" log="True" position="7">
+            <Src neg="False">
+              <ObjectRef ref="id47C6A23E"/>
+            </Src>
+            <Dst neg="True">
+              <ObjectRef ref="id47C6A248"/>
+            </Dst>
+            <Srv neg="False">
+              <ServiceRef ref="id47C6A24B"/>
+            </Srv>
+            <When neg="False">
+              <IntervalRef ref="sysid2"/>
+            </When>
+            <PolicyRuleOptions/>
+          </PolicyRule>
+          <PolicyRule action="Accept" disabled="False" id="id4ECBA9D2" log="True" position="8">
+            <Src neg="False">
+              <ObjectRef ref="id47C6A23E"/>
+            </Src>
+            <Dst neg="True">
+              <ObjectRef ref="id47C6A248"/>
+            </Dst>
+            <Srv neg="False">
+              <ServiceRef ref="id47C6A24C"/>
+            </Srv>
+            <When neg="False">
+              <IntervalRef ref="sysid2"/>
+            </When>
+            <PolicyRuleOptions/>
+          </PolicyRule>
+          <PolicyRule action="Accept" disabled="False" id="id4ECBAC37" log="True" position="9">
+            <Src neg="False">
+              <ObjectRef ref="id47C6A4D6"/>
+            </Src>
+            <Dst neg="False">
+              <ObjectRef ref="id47C6A240"/>
+            </Dst>
+            <Srv neg="False">
+              <ServiceRef ref="id47C6A24F"/>
+            </Srv>
+            <When neg="False">
+              <IntervalRef ref="sysid2"/>
+            </When>
+            <PolicyRuleOptions/>
+          </PolicyRule>
+          <PolicyRule action="Accept" disabled="False" id="id4ECBAEA6" log="True" position="10">
+            <Src neg="False">
+              <ObjectRef ref="id47C6A23E"/>
+            </Src>
+            <Dst neg="True">
+              <ObjectRef ref="id47C6A248"/>
+            </Dst>
+            <Srv neg="False">
+              <ServiceRef ref="id47C6A24D"/>
+              <ServiceRef ref="id47C6A24E"/>
+            </Srv>
+            <When neg="False">
+              <IntervalRef ref="sysid2"/>
+            </When>
+            <PolicyRuleOptions/>
+          </PolicyRule>
+          <PolicyRule action="Accept" disabled="False" id="id4ECBB061" log="True" position="11">
+            <Src neg="False">
+              <ObjectRef ref="id47C6A23E"/>
+            </Src>
+            <Dst neg="True">
+              <ObjectRef ref="id47C6A248"/>
+            </Dst>
+            <Srv neg="False">
+              <ServiceRef ref="id47C6A692"/>
+            </Srv>
+            <When neg="False">
+              <IntervalRef ref="sysid2"/>
+            </When>
+            <PolicyRuleOptions/>
+          </PolicyRule>
+          <PolicyRule action="Accept" disabled="False" id="id4ED76952" log="True" position="12">
+            <Src neg="False">
+              <ObjectRef ref="id47C6A23E"/>
+            </Src>
+            <Dst neg="False">
+              <ObjectRef ref="id47C6A240"/>
+            </Dst>
+            <Srv neg="False">
+              <ServiceRef ref="id47C6A24B"/>
+            </Srv>
+            <When neg="False">
+              <IntervalRef ref="sysid2"/>
+            </When>
+            <PolicyRuleOptions/>
+          </PolicyRule>
+          <PolicyRule action="Accept" disabled="False" id="id4ED79146" log="True" position="13">
+            <Src neg="True">
+              <ObjectRef ref="id47C6A248"/>
+            </Src>
+            <Dst neg="False">
+              <ObjectRef ref="id47C6A240"/>
+            </Dst>
+            <Srv neg="False">
+              <ServiceRef ref="id47C6A24B"/>
+            </Srv>
+            <When neg="False">
+              <IntervalRef ref="sysid2"/>
+            </When>
+            <PolicyRuleOptions/>
+          </PolicyRule>
+        </Policy>
+        <Interface dyn="True" id="id47C6A233" label="WAN" name="eth0" security_level="0" unnum="False">
+          <InterfacePolicy id="id47C6A234"/>
+        </Interface>
+        <Interface dyn="False" id="id47C6A235" label="LAN" name="eth1" security_level="100" unnum="False">
+          <IPv4 address="192.168.1.1" id="id47C6A237" name="laboFW:eth1:ip" netmask="255.255.255.0"/>
+          <InterfacePolicy id="id47C6A236"/>
+        </Interface>
+        <Interface dyn="False" id="id47C6A238" label="DMZ" name="eth2" security_level="100" unnum="False">
+          <IPv4 address="192.168.2.1" id="id47C6A23A" name="laboFW:eth2:ip" netmask="255.255.255.0"/>
+          <InterfacePolicy id="id47C6A239"/>
+        </Interface>
+        <Management address="0.0.0.0">
+          <SNMPManagement enabled="False" snmp_read_community="" snmp_write_community=""/>
+          <FWBDManagement enabled="False" identity="" port="-1"/>
+          <PolicyInstallScript arguments="" command="" enabled="False"/>
+        </Management>
+        <FirewallOptions>
+          <Option name="accept_established">true</Option>
+          <Option name="accept_new_tcp_with_no_syn">true</Option>
+          <Option name="check_shading">true</Option>
+          <Option name="configure_interfaces">true</Option>
+          <Option name="eliminate_duplicates">true</Option>
+          <Option name="firewall_dir">/etc</Option>
+          <Option name="firewall_is_part_of_any_and_networks">true</Option>
+          <Option name="freebsd_ip_forward">1</Option>
+          <Option name="in_out_code">true</Option>
+          <Option name="limit_value">0</Option>
+          <Option name="linux24_ip_forward">1</Option>
+          <Option name="load_modules">true</Option>
+          <Option name="local_nat">false</Option>
+          <Option name="log_level">info</Option>
+          <Option name="log_prefix">RULE %N -- %A </Option>
+          <Option name="loopback_interface">lo0</Option>
+          <Option name="macosx_ip_forward">1</Option>
+          <Option name="manage_virtual_addr">true</Option>
+          <Option name="openbsd_ip_forward">1</Option>
+          <Option name="pass_all_out">false</Option>
+          <Option name="pf_limit_frags">5000</Option>
+          <Option name="pf_limit_states">10000</Option>
+          <Option name="pf_scrub_maxmss">1460</Option>
+          <Option name="pf_timeout_frag">30</Option>
+          <Option name="pf_timeout_interval">10</Option>
+          <Option name="pix_add_clear_statements">true</Option>
+          <Option name="pix_assume_fw_part_of_any">true</Option>
+          <Option name="pix_default_logint">300</Option>
+          <Option name="pix_emblem_log_format">false</Option>
+          <Option name="pix_emulate_out_acl">true</Option>
+          <Option name="pix_floodguard">true</Option>
+          <Option name="pix_include_comments">true</Option>
+          <Option name="pix_route_dnat_supported">true</Option>
+          <Option name="pix_rule_syslog_settings">false</Option>
+          <Option name="pix_security_fragguard_supported">true</Option>
+          <Option name="pix_syslog_device_id_supported">false</Option>
+          <Option name="pix_use_acl_remarks">true</Option>
+          <Option name="prompt1">$ </Option>
+          <Option name="prompt2"> # </Option>
+          <Option name="solaris_ip_forward">1</Option>
+          <Option name="ulog_nlgroup">1</Option>
+          <Option name="verify_interfaces">true</Option>
+        </FirewallOptions>
+      </Firewall>
+    </ObjectGroup>
+    <IntervalGroup id="id47C69FE5" name="Time"/>
+  </Library>
+  <Library id="sysid99" name="Deleted Objects" ro="False">
+    <IPv4 address="0.0.0.0" id="id47C6A250" name="New Address" netmask="0.0.0.0"/>
+    <ObjectRef ref="sysid0"/>
+    <CustomService id="id47C6A854" name="New Custom Service">
+      <CustomServiceCommand platform="ipf"></CustomServiceCommand>
+      <CustomServiceCommand platform="ipfw"></CustomServiceCommand>
+      <CustomServiceCommand platform="iptables"></CustomServiceCommand>
+      <CustomServiceCommand platform="pf"></CustomServiceCommand>
+      <CustomServiceCommand platform="pix"></CustomServiceCommand>
+      <CustomServiceCommand platform="unknown"></CustomServiceCommand>
+    </CustomService>
+    <TCPService ack_flag="False" ack_flag_mask="False" dst_range_end="0" dst_range_start="0" fin_flag="False" fin_flag_mask="False" id="id47C6A855" name="New TCP Service" psh_flag="False" psh_flag_mask="False" rst_flag="False" rst_flag_mask="False" src_range_end="0" src_range_start="0" syn_flag="False" syn_flag_mask="False" urg_flag="False" urg_flag_mask="False"/>
+  </Library>
+  <Library color="#d4f8ff" comment="Standard objects" id="syslib000" name="Standard" ro="True">
+    <AnyInterval comment="Any Interval" from_day="-1" from_hour="-1" from_minute="-1" from_month="-1" from_weekday="-1" from_year="-1" id="sysid2" name="Any" to_day="-1" to_hour="-1" to_minute="-1" to_month="-1" to_weekday="-1" to_year="-1"/>
+    <AnyNetwork comment="Any Network" id="sysid0" name="Any" address="0.0.0.0" netmask="0.0.0.0"/>
+    <AnyIPService comment="Any IP Service" id="sysid1" name="Any" protocol_num="0"/>
+  </Library>
+</FWObjectDatabase>
